@@ -98,8 +98,4 @@ router.post('/', (req, res) => {
 	});
 });
 
-router.get('/500', (req, res) => {
-	a();
-});
-
 module.exports = router;
