@@ -1,0 +1,127 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	position: relative;
+}
+
+body {
+	padding-top: 5rem;
+	background: #141D26;
+	font-family: sans-serif;
+	margin-bottom: 3.5rem;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #233446;
+	width: 100%;
+	-webkit-box-shadow: 0px 1px 8px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 1px 8px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 8px -1px rgba(0,0,0,0.75);
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: #243444;
+	width: 100%;
+	text-align: center;
+	color: #e1e1e1;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer a {
+	text-decoration: none;
+	color: #FF6600;
+}
+
+footer p {
+	padding: .25rem;
+}
+
+#generator {
+	background: #1B2936;
+	padding: 2rem;
+	color: #e1e1e1;
+	width: 80%;
+	min-height: 5rem;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.nav-brand {
+	padding: 1rem;
+	font-size: 1.4rem;
+	color: white;
+}
+
+.generatebtn {
+	display: block;
+	height: 2.3rem;
+	width: 7.6rem;
+	border: 1px solid #1C2A3A;
+	background: #233446;
+	margin: 0 auto;
+	margin-top: 1.4rem;
+	outline: none;
+	color: #e1e1e1;
+	text-shadow: 1px 1px black;
+	font-size: 1.08rem;
+	-webkit-box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+	box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+}
+
+.generatebtn:hover {
+	outline: none;
+}
+
+.generatebtn:active {
+	-webkit-box-shadow: inset -1px 3px 11px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset -1px 3px 11px 0px rgba(0,0,0,0.75);
+	box-shadow: inset -1px 3px 11px 0px rgba(0,0,0,0.75);
+}
+
+input[type=text] {
+	margin-top: 1.2rem;
+	padding: 5px 5px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #76808A;
+	color: #e1e1e1;
+	outline: none;
+}
+
+input[type=text]:hover {
+	outline: none;
+}
+
+.proxy {
+	padding: .7rem;
+	background: #DFF0D8;
+	color: #3C763D;
+}
+
+.proxy a {
+	color: #3C763D;
+}
+
+.error {
+	padding: .7rem;
+	background: #F8D7DA;
+	color: #721c24;
+}
+
+.error a {
+	color: #721c24;
+}
+

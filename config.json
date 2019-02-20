@@ -1,0 +1,7 @@
+{
+	"ipaddress": "your servers ipaddress",
+	"ports": {
+		"from": 40000,
+		"to": 60000
+	}
+}

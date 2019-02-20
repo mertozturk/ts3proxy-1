@@ -1,0 +1,20 @@
+{
+  "name": "ts3proxy",
+  "version": "1.0.0",
+  "description": "A simple application to create teamspeak 3 proxies via a web page like ts3.cloud.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development node index.js"
+  },
+  "author": "UnlimitedBytes",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "express": "^4.16.4",
+    "is-ip": "^2.0.0",
+    "morgan": "^1.9.1",
+    "twig": "^1.13.2"
+  }
+}
