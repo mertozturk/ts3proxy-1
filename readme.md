@@ -72,6 +72,7 @@ $ sudo su ts3proxy
 $ npm start
 ```
 Now you can open your webbrowser and go to: ``http://<your_servers_ip>:1337``
+
 Congratulations now you can create teamspeak 3 proxys.
 #
 #
@@ -98,4 +99,4 @@ See also the list of [contributors](https://github.com/UnlimitedBytes/ts3proxy/c
 #
 #
 ### License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
