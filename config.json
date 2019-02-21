@@ -1,5 +1,5 @@
 {
-	"ipaddress": "your servers ipaddress",
+	"ipaddress": "your servers ip",
 	"ports": {
 		"from": 40000,
 		"to": 60000
