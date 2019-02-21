@@ -2,6 +2,7 @@
 #
 #
 # TeamSpeak 3 Proxy
+[![Discord](https://discordapp.com/api/guilds/539350226947801089/widget.png?style=shield)](https://discord.gg/e2cYZDv)
 
 A simple application for creating teamspeak 3 proxys like ts3.cloud.
 
