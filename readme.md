@@ -10,9 +10,6 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 * NodeJS
 * NPM
-* iptables
-* sudo
-* Server with IP_Forwarding allowed
 #
 ### Installing
 Create a new user:
@@ -49,23 +46,6 @@ Give the new user the ownership of the applications folder and all files in it:
 ```sh
 $ sudo chown -R ts3proxy: .
 ```
-Then add a new line to your ``/etc/sudoers`` file to enable the iptables privileges:
-```sh
-$ sudo visudo
-```
-```
-ts3proxy    ALL=NOPASSWD: /sbin/iptables
-```
-Activate ip_forward
-```sh
-$ echo 1 > /proc/sys/net/ipv4/ip_forward
-$ sysctl -w net.ipv4.ip_forward=1
-```
-Add two required iptable rules
-```sh
-$ iptables -A FORWARD -j ACCEPT
-$ iptables -t nat -A POSTROUTING -j MASQUERADE
-```
 At least switch the user and start the application by running
 ```sh
 $ sudo su ts3proxy
@@ -85,7 +65,7 @@ Additional notes about how to deploy this on a live system.
 - [Node.JS](https://nodejs.org/en/) - The programming language used
 - [Express.JS](https://expressjs.com/de/) - The web framework used
 - [Twig](https://twig.symfony.com/) - The view engine used
-- [iptables](https://wiki.debian.org/iptables) - For the proxying
+- [udp-proxy](https://www.npmjs.com/package/udp-proxy) - For the proxying
 #
 #
 ## Contributing
