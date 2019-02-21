@@ -16,14 +16,15 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.use('/', require('./routes/index.js'));
+app.use('/admin', require('./routes/admin/index.js'));
 
 app.use((req, res, next) => {
-	res.status(404).render("404");
+	res.status(404).render("errors/404");
 });
 
 app.use((err, req, res, next) => {
 	console.error(err);
-	res.status(500).render("500");
+	res.status(500).render("errors/500");
 });
 
 module.exports = app;

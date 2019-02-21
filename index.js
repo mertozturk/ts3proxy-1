@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const { exec } = require('child_process');
 
 const host = '0.0.0.0';
-const port = 1337;
+const port = 1335;
 const httpServer = http.createServer(app);
 
 httpServer.listen(port, host, (err) => {

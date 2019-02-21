@@ -63,37 +63,32 @@ router.post('/', (req, res) => {
 			error: err.name
 		});
 
-		if(!fs.existsSync("../usedports.txt")) { fs.writeFileSync("../usedports.txt", "")};
+		const udpproxy = require('udp-proxy');
 		let proxyport = -1;
-		let usedports = fs.readFileSync("../usedports.txt").toString("utf-8");
 		for(let i = 0; i < 5; i++) {
-			let tempproxyport = Math.floor(Math.random() * (config.ports.to - config.ports.from)) + config.ports.from;
-			if(usedports.indexOf(tempproxyport + "\n") == -1) {
+			try {
+				let tempproxyport = Math.floor(Math.random() * (config.ports.to - config.ports.from)) + config.ports.from;
+				const server = udpproxy.createServer({
+					address: address,
+					port: port,
+					localport: tempproxyport
+				});
 				proxyport = tempproxyport;
-				fs.writeFileSync("../usedports.txt", proxyport + "\n", {flags: "a"});
 				break;
+			} catch(e) {
+				console.error(e);
 			}
 		}
-		
+
 		if(proxyport == -1) return res.render("index", {
 			error: "Could not find a free port. Please try again."
 		});
-		
-		const { exec } = require('child_process');
-		exec("sudo iptables -t nat -A PREROUTING -p udp --dport " + proxyport + " -j DNAT --to-destination " + address + ":" + port + " -m comment --comment \"ts3proxy\"", (err, stdout, stderr) => {
-			if(err) {
-				console.error(err);
-				return res.status(500).render("index", {
-					error: "Internal Server Error"
-				});
-			}
 
-			res.status(200).render("index", {
-				proxy: {
-					ip: config.ipaddress,
-					port: proxyport
-				}
-			});
+		res.status(200).render("index", {
+			proxy: {
+				ip: config.ipaddress,
+				port: proxyport
+			}
 		});
 	});
 });

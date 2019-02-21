@@ -1,5 +1,5 @@
 {
-	"ipaddress": "your servers ipaddress",
+	"ipaddress": "35.204.1.152",
 	"ports": {
 		"from": 40000,
 		"to": 60000
