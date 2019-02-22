@@ -7,7 +7,7 @@ if(config.private.enabled) {
 	function unauthorized(res) {
 		res.statusCode = 401;
 		res.setHeader('WWW-Authenticate', 'Basic realm="Authorization Required"');
-		res.end('Unauthorized');
+		res.render("errors/401");
 	};
 
 	router.use((req, res, next) => {
