@@ -1,11 +1,16 @@
 const app = require('./app');
 const http = require('http');
 const chalk = require('chalk');
-const { exec } = require('child_process');
+const config = require('./config.json');
 
-const host = '0.0.0.0';
-const port = 1337;
+const host = config.webserver.host;
+const port = config.webserver.port;
 const httpServer = http.createServer(app);
+
+if(config.private.enabled && config.private.password == "admin") {
+	console.error("PRIVATE MODE WITHOUT CHANGING THE DEFAULT PASSWORD IS UNSECURE! CHANGE THE PASSWORD!");
+	process.exit(1);
+}
 
 httpServer.listen(port, host, (err) => {
 	if(err) throw err;

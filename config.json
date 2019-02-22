@@ -1,7 +1,16 @@
 {
 	"ipaddress": "your servers ip",
+	"webserver": {
+		"host": "0.0.0.0",
+		"port": 1337
+	},
 	"ports": {
 		"from": 40000,
 		"to": 60000
+	},
+	"private": {
+		"enabled": false,
+		"username": "admin",
+		"password": "admin"
 	}
 }

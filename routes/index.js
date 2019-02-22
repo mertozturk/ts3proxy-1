@@ -1,8 +1,29 @@
-const fs = require('fs');
 const express = require('express');
 const config = require('../config.json');
 
 const router = express.Router();
+
+if(config.private.enabled) {
+	function unauthorized(res) {
+		res.statusCode = 401;
+		res.setHeader('WWW-Authenticate', 'Basic realm="Authorization Required"');
+		res.end('Unauthorized');
+	};
+
+	router.use((req, res, next) => {
+		let authorization = req.headers.authorization;
+		if(!authorization) return unauthorized(res);
+		let parts = authorization.split(' ');
+		let scheme = parts[0];
+		let credentials = new Buffer(parts[1], 'base64').toString();
+		let index = credentials.indexOf(':');
+		if ('Basic' != scheme || index < 0) return unauthorized(res);
+		let user = credentials.slice(0, index);
+		let pass = credentials.slice(index + 1);
+		if(user != config.private.username || pass != config.private.password) return unauthorized(res);
+		next();
+	});
+}
 
 router.get('/', (req, res) => {
 	res.status(200).render("index");
