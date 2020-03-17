@@ -1,8 +1,8 @@
 {
 	"ipaddress": "your servers ip",
 	"webserver": {
-		"host": "0.0.0.0",
-		"port": 1337
+		"host": "5.135.214.162",
+		"port": 10718
 	},
 	"ports": {
 		"from": 40000,
